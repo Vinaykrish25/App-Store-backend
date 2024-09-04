@@ -5,12 +5,19 @@ app.use(express.json());
 
 
 exports.getAllApps = async (req,res) => {
-    if(req.query){
-        const queryObject = {...req.query}
-        var query = await appDataModel.find(queryObject)
+    try{
+        if(req.query){
+            const queryObject = {...req.query}
+            var query = await appDataModel.find(queryObject)
+        }
+        else{
+            var query = await appDataModel.fin();
+        }
+        res.status(200).json(query)
+    }catch(err){
+        res.status(500).json({
+            message: "Internal Server Error"
+        })
     }
-    else{
-        var query = await appDataModel.find();
-    }
-    res.json(query)
+   
 }

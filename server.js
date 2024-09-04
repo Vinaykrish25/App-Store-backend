@@ -9,7 +9,8 @@ dotenv.config();
 
 mongoose.connect(process.env.APPSTORE_URL).then(() => {
     console.log("Database is connected successfully");
-})
+}).catch(err => console.log(err.message)
+)
 
 const app = express();
 app.use(cors())

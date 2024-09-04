@@ -1,11 +1,11 @@
 const express = require('express');
 const { getAllApps } = require('../Controller/appController');
 
+//create router
 const router = express.Router();
 
+//fetch the data
 router.get('/', getAllApps);
-// router.get('/', );
-// router.get('/', );
-// router.get('/', );
 
+//export router
 module.exports = router;
