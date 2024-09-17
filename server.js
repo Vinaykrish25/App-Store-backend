@@ -14,7 +14,7 @@ mongoose.connect(process.env.APPSTORE_URL).then(() => {
 
 const app = express();
 app.use(cors({
-    origin: "https://app-store-eta.vercel.app/"
+    origin: `https://app-store-eta.vercel.app`
 }))
 app.use(express.json());
 
