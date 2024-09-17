@@ -11,7 +11,7 @@ exports.getAllApps = async (req,res) => {
             var query = await appDataModel.find(queryObject)
         }
         else{
-            var query = await appDataModel.fin();
+            var query = await appDataModel.find();
         }
         res.status(200).json(query)
     }catch(err){
